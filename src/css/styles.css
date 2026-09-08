@@ -31,6 +31,24 @@ body {
             }
         }
     }
+    &.css {
+        background: linear-gradient(45deg, black, #663399);
+        main {
+            background: rgba(245, 242, 242, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(154, 3, 214, 0.986);
+        }
+    }
+    section {
+        margin: 2rem auto;
+        h2.subtitle {
+            color: #ab7dd9;
+            border-bottom: 2px dotted #ab7dda;
+            padding-bottom: 0.4rem;
+        }
+    }
     &.emmet{
         background: linear-gradient(45deg, black, #7acb16);
         section {

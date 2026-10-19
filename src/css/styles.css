@@ -1,19 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
-    background: linear-gradient(rgb(215, 1, 1),rgb(67, 1, 111));
-    color:rgb(255, 255, 255);
+    background: linear-gradient(rgb(215, 1, 1), rgb(67, 1, 111));
+    color: rgb(255, 255, 255);
     font-family: Poppins;
     font-weight: 400;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100dvh;
-    nav.back{
+
+    nav.back {
         position: fixed;
         top: 1rem;
         left: 1rem;
-        a:link, a:visited{
+
+        a:link,
+        a:visited {
             background-color: rgba(0, 0, 0, 0.2);
             border: 2px solid white;
             border-radius: 50%;
@@ -26,13 +29,16 @@ body {
             color: white;
             transform: scale(0.8);
             transition: all 0.4s ease-out;
-            &:hover{
+
+            &:hover {
                 transform: scale(1);
             }
         }
     }
+
     &.css {
         background: linear-gradient(45deg, black, #663399);
+
         main {
             background: rgba(245, 242, 242, 0.15);
             backdrop-filter: blur(15px);
@@ -41,83 +47,101 @@ body {
             box-shadow: 0 15px 35px rgba(154, 3, 214, 0.986);
         }
     }
+
     section {
         margin: 2rem auto;
+
         h2.subtitle {
             color: #ab7dd9;
             border-bottom: 2px dotted #ab7dda;
             padding-bottom: 0.4rem;
         }
     }
-    &.emmet{
+
+    &.emmet {
         background: linear-gradient(45deg, black, #7acb16);
+
         section {
             h2.subtitle {
                 color: #7acb16;
                 border-bottom: 2px dotted #7acb16;
                 padding-bottom: 0.4rem;
-                small{
+
+                small {
                     color: white;
                     font-size: 0.9rem;
                     font-weight: 400px;
                 }
             }
-        h3{ 
-            color: #7acb16;
-            margin: 0;
 
-        }
-        p{
-            font-size: 1.2rem;
-        }
-        xmp{
-            background-color: #0009;
-            border-radius: 8px;
-            padding: 0.6rem;
-            margin: 0;
+            h3 {
+                color: #7acb16;
+                margin: 0;
+
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            xmp {
+                background-color: #0009;
+                border-radius: 8px;
+                padding: 0.6rem;
+                margin: 0;
+            }
         }
     }
-    }
-    &.html{
+
+    &.html {
         background: linear-gradient(45deg, black, #e44d26);
-        main{
-            menu.mainmenu{
-                a:link, a:visited{
-                    span{
+
+        main {
+            menu.mainmenu {
+
+                a:link,
+                a:visited {
+                    span {
                         background-color: #e44d26;
                         height: 50px;
                         width: 50px;
                     }
                 }
-                aside{
-                    h4{
+
+                aside {
+                    h4 {
                         font-size: 1.2rem;
                     }
                 }
             }
         }
-        section{
-            h2.subtitle{
+
+        section {
+            h2.subtitle {
                 color: #e44d26;
                 border-bottom: 2px dotted #e44d26;
                 padding-bottom: 0.4rem;
             }
         }
     }
+
     main {
-        background:linear-gradient(#0006, #0000);
+        background: linear-gradient(#0006, #0000);
         border-radius: 0.4rem;
         padding: 1rem;
+
         header.mainmenu {
-            &.internal{
-                h1{
+            &.internal {
+                h1 {
                     font-size: 2rem;
                 }
-                img{
+
+                img {
                     height: 120px;
                     width: 120px;
                 }
             }
+
             h1 {
                 font-size: 3.6rem;
                 border-bottom: 2px solid #000000;
@@ -125,6 +149,7 @@ body {
                 text-align: center;
                 margin: 1rem 0;
             }
+
             img {
                 height: 280px;
                 width: 280px;
@@ -133,35 +158,42 @@ body {
                 object-fit: cover;
                 margin: 0 auto;
                 border-radius: 50%;
-                
+
             }
-            h2{
+
+            h2 {
                 font-size: 1.2rem;
                 font-weight: 500;
                 text-align: center;
                 text-transform: uppercase;
                 margin: 0
             }
-            h3{
+
+            h3 {
                 font-size: 1rem;
                 font-weight: 300;
                 text-align: center;
                 margin: 0;
             }
-            h4, h5{
+
+            h4,
+            h5 {
                 font-size: 0.8rem;
                 font-weight: 200;
                 text-align: center;
                 margin: 0;
             }
         }
-        menu.mainmenu{
+
+        menu.mainmenu {
             display: flex;
             flex-direction: column;
             gap: 1rem;
             justify-content: center;
             align-items: center;
-            a:link, a:visited {
+
+            a:link,
+            a:visited {
                 color: black;
                 border-radius: 5rem;
                 background-color: rgb(226, 220, 220);
@@ -171,11 +203,13 @@ body {
                 padding: 0.6rem;
                 text-decoration: none;
                 transition: all 0.4s ease-in;
-                &:hover{
+
+                &:hover {
                     background-color: #8b02d0;
                     transform: scale(1.05);
                 }
-                span{
+
+                span {
                     background-color: #fbf7f7;
                     border-radius: 50%;
                     display: flex;
@@ -186,15 +220,18 @@ body {
                     height: 60px;
                     width: 60px;
                 }
-                aside{
+
+                aside {
                     color: #000000;
                     margin-left: 0.6rem;
-                    h4{
+
+                    h4 {
                         margin: 0;
                         font-size: 1.4rem;
                         font-weight: 400;
                     }
-                    small{
+
+                    small {
                         color: #000000;
                         font-size: 0.7rem;
                         font-weight: 300;
@@ -202,23 +239,27 @@ body {
                 }
             }
         }
-        section{
+
+        section {
             background-color: #0009;
             border-radius: 0.4rem;
             margin-top: 2rem;
-            padding: 0.8rem; 
+            padding: 0.8rem;
             min-height: 200px;
             width: 380px
         }
-        table{
+
+        table {
             border-collapse: collapse;
         }
-        td{
+
+        td {
             width: 40px;
             height: 27px;
             border: 1px solid rgb(221, 226, 220);
         }
-        .red{
+
+        .red {
             background: rgb(54, 6, 230);
         }
     }

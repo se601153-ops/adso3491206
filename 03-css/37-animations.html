@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>37-animations</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        section {
+            div.jungle {
+                background: url(imgs/jungle.png),
+                            no-repeat center top /contain;
+                height: 460PX;
+                margin: 0.4rem auto;
+                position: relative;
+                overflow: hidden;
+                width: 380px;
+
+                img {
+                    position: absolute;
+
+                    &.logo {
+                        top: 30px;
+                        left: 30px;
+                        animation: 2.5s animlogo infinite ease;
+                    }
+                    &.dk {
+                        top: 185px;
+                        left: 120px;
+                        width: 140px;
+                        animation: 2s animdk infinite linear;
+                    }
+                }
+                div.move {
+                    position: absolute;
+                    left: -140px;
+                    bottom: 150px;
+                    width: 120px;
+                    animation: 4s animmove infinite linear;
+                    img.ryno {
+                        width: 120px;
+                        animation: 0.2s animryno infinite ease;
+                    }
+                }
+            }
+        }
+        @keyframes animlogo {
+            0%,100% { transform: scale(0.8); }
+            50%     { transform: scale(1.2); }
+        }
+        @keyframes animdk {
+            0%   { transform:  rotatey(0deg)    translatey(0px);   }
+            25%  { transform:  rotatey(0deg)    translatey(-80px); }
+            50%  { transform:  rotatey(-90deg)  translatey(-80px); }
+            75%  { transform:  rotatey(0deg)    translatey(-80px); }
+            100% { transform:  rotatey(0deg)    translateY(0px);   }
+        }
+        @keyframes animryno {
+            0%,100% { transform: translatey(0px); }
+            50%     { transform: translatey(-4px); }
+        }
+        @keyframes animmove {
+            0%    { transform: rotatey(0deg);    bottom: 150px;   left: -140px; }
+            8%    { transform: rotatey(0deg);    bottom: 150px;   left: 120px;  }
+            10%   { transform: rotatey(0deg);    bottom: 220px;   left: 120px;  }
+            12%   { transform: rotatey(0deg);    bottom: 150px;   left: 120px;  }
+            50%   { transform: rotatey(0deg);    bottom: 150px;   left: 400px;  }
+            51%   { transform: rotatey(-180deg); bottom: 150px;   left: 400px;  }
+            52%   { transform: rotatey(-180deg); bottom: 150px;   left: 400px;  }
+            60%   { transform: rotatey(-180deg); bottom: 150px;   left: 1200px; }
+            62%   { transform: rotatey(-180deg); bottom: 220px;   left: 120px;  }
+            64%   { transform: rotatey(-180deg); bottom: 150px;   left: 120px;  }
+            99%   { transform: rotatey(-180deg); bottom: 150px;   left: -140px; }
+            100%  { transform: rotatey(0deg);    bottom: 150px;   left: -140px; }
+        }
+    </style>
+</head>;
+<body class="css">left: 
+   <nav class="back"> rotatey()
+        <a href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+   </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>37-animations</h1>
+            <img src="../src/imgs/logo-css.png" alt="css">
+            <h3> Feature using @keyframes to create multi-step keyframed visual changes without JavaScript intervention.</h3>
+        </header>
+        <section>
+            <div class="jungle">
+                <img src="imgs/logo-dk.png" class="logo">
+                <img src="imgs/dk.png" class="dk">
+                <div class="move">
+                    <img src="imgs/ryno.png" class="ryno">
+                </div>
+            </div>
+        </section>
+    </main> 
+</body>
+</html>

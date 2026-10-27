@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>38-media-queries</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        *{
+            transition: all 0.4rem ease;
+        }
+        body {
+            background-color: #003675;
+            font-family: poppins, sans-serif;
+            color: #fff;
+
+            main {
+                border: 4px solid #fff;
+                padding: 1rem;
+                margin: 2rem auto;
+                width: 1230px; /*1280*/
+
+                figure.logo {
+                    background: url(imgs/pepsi01.png) no-repeat center;
+                    height: 354px;
+                    margin: 0 auto;
+                    width: 919px;
+                }
+                h2 {
+                    display: none;
+                    text-align: center;
+                }
+                p {
+                    line-height: 2rem;
+                    text-align: justify;
+                }
+            }
+        }
+        /* breackpoint: > 1280px*/
+        @media (max-width: 1280px) {
+         body {
+            main {
+                h2:first-of-type { display: block;}
+            }
+        }
+    }
+    /* breackpoint: > 1280px*/
+        @media (max-width: 1280px) {
+        body {
+            main {
+                h2:nth-of-type(2) { display: block;}
+                width: 800px;
+
+                figure.logo {
+                    background: url(imgs/pepsi02.png) no-repeat center;
+                    height: 370px;
+                    margin: 0 auto;
+                    width: 348px;
+                }
+            }
+        }
+    }
+    /* breackpoint: > 1280px*/
+        @media (max-width: 1280px) {
+        body {
+            main {
+                h2:last-of-type { display: block;}
+                h2:nth-of-type(2) { display: none;}
+                width: 350px;
+
+                figure.logo {
+                    background: url(imgs/pepsi03.png) no-repeat center;
+                    height: 156px;
+                    margin: 0 auto;
+                    width: 162px;
+                }
+            }
+        }
+    }
+    </style>
+</head>
+<body>
+    <main>
+        <figure class="logo"></figure>
+        <h2>BreakPoint: > 1280px <br> (Resolution: Desktop)</h2>
+        <h2>BreakPoint: < 1280px > 800px <br> (Resolution: Table)</h2>
+        <h2>BreakPoint: < 800px <br> (Resolution: mobile)</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aperiam officiis nostrum molestiae numquam, possimus facilis veniam magni laboriosam ea est deleniti distinctio ducimus cum illo nesciunt vel. Minus eveniet expedita delectus, debitis similique nobis odit pariatur illum labore sapiente error, ducimus harum quaerat! Iusto dignissimos tempora beatae doloremque cupiditate quibusdam molestiae iure perspiciatis, sed laboriosam, officiis explicabo nam amet. Vitae error vero consequatur corrupti, harum cum molestias. Nobis inventore dignissimos nemo, eaque omnis recusandae vel, molestiae earum eos hic id laudantium nisi nam, fugiat iste voluptatibus! Atque deserunt porro dolorem nemo assumenda numquam, fugiat illo molestias, maxime facilis ullam aspernatur dolorum provident consequuntur distinctio possimus error repellendus ipsam aperiam eveniet? Adipisci eum dignissimos ratione? Sequi similique, dignissimos a repellendus consequatur magni mollitia voluptatem obcaecati doloremque ducimus ex alias recusandae reiciendis quos odio? Ea error ullam molestias voluptatum, eligendi est cupiditate at perferendis voluptas harum delectus sit blanditiis veritatis repellat maiores! Placeat, maxime beatae soluta deleniti ut explicabo alias dignissimos omnis atque fugiat rerum ipsam voluptates eaque dolor exercitationem, qui repellat vitae! Repellendus sint totam maiores modi nihil quae corrupti ea quasi obcaecati in sapiente facilis voluptatibus nisi, nam tempore alias praesentium, natus cupiditate! Odio tenetur quasi dicta nihil maiores.
+        </p>
+    </main>
+</body>
+</html>

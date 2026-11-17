@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONE PIECE</title>
+    <link rel="stylesheet" href="src/css/style.css">
+<style>
+    
+        body {
+            background-image: url(imgs/one-piece-manga.webp); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: #fff;
+            border: 10px solid #fff; 
+        }
+
+        main {
+            display: block;
+            min-height: 100vh;
+            padding: 20px; 
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        main header {
+            margin: 20px auto; 
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        figure.logo {
+            background: url(imgs/one-piece\ logo.png) no-repeat center center;
+            background-size: contain;
+            height: 350px; 
+            width: 100%; 
+            max-width: 1000px; 
+            margin: 0 auto 30px auto;
+        }
+
+        main section.gallery {
+            margin: 20px auto;
+            width: 100%;
+            max-width: 1200px; 
+            font-size: 0;
+            text-align: center;
+        }
+
+        main section.gallery a {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            height: 250px; 
+            width: 24%;
+            margin: 0 0.5%;
+            cursor: pointer;
+            background-color: #222;
+            transition: all 0.3s ease;
+            text-decoration: none; 
+            background-image: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.9) 100%);
+            border-radius: 8px; 
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        main section.gallery a:hover {
+            transform: scale(1.03); 
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        main section.gallery a.gallery01 { background-image: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.9) 100%), url(imgs/cartel\ de\ luffy.jpg); background-size: cover; background-position: center top; }
+        main section.gallery a.gallery02 { background-image: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.9) 100%), url(imgs/cartel\ de\ zoro.jpg); background-size: cover; background-position: center top; }
+        main section.gallery a.gallery03 { background-image: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.9) 100%), url(imgs/cartel\ de\ sanji.jpg); background-size: cover; background-position: center top; }
+        main section.gallery a.gallery04 { background-image: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.9) 100%), url(imgs/cartel\ shanks.jpg); background-size: cover; background-position: center top; }
+
+        main section.gallery a h3 {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            margin: 0;
+            color: #fff;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 999;
+            text-align: center;
+        }
+
+        .modal-overlay::before {
+            content: '';
+            display: inline-block;
+            height: 100vh;
+            vertical-align: middle;
+        }
+
+        .modal-content {
+            display: inline-block;
+            vertical-align: middle;
+            background-color: rgba(20, 20, 20, 0.95);
+            width: 90%;
+            max-width: 600px;
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid #fad000;
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+            transform: translateY(100vh);
+            transition: transform 0.4s ease;
+            position: relative;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2rem;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .modal-close:hover {
+            color: #fad000;
+        }
+
+        .modal-overlay:target {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-overlay:target .modal-content {
+            transform: translateY(0);
+        }
+
+        main section.content {
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 40px auto;
+            padding: 30px;
+            width: 100%;
+            max-width: 1200px; 
+            border-radius: 15px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        main section.content article {
+            background-color: #fff;
+            color: #333;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        main section.content article:last-child {
+            margin-bottom: 0;
+        }
+
+        main section.content article div.image1 {
+            float: left;
+            height: 180px; 
+            width: 260px;  
+            border-radius: 10px;
+            background-color: #ccc;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-right: 30px;
+            margin-bottom: 10px;
+        }
+
+        main section.content article:nth-child(1) div.image1 { background-image: url(imgs/cartel\ de\ luffy.jpg); }
+        main section.content article:nth-child(2) div.image1 { background-image: url(imgs/cartel\ de\ zoro.jpg); }
+        main section.content article:nth-child(3) div.image1 { background-image: url(imgs/cartel\ de\ sanji.jpg); }
+        main section.content article:nth-child(4) div.image1 { background-image: url(imgs/cartel\ shanks.jpg); }
+
+        main section.content article div.text {
+            font-family: Verdana;
+            text-align: justify;
+            line-height: 1.6rem;
+            font-size: 1.1rem; 
+            overflow: hidden;
+        }
+
+        @media (max-width: 1280px) {
+            figure.logo {
+                height: 250px; 
+            }
+
+            main section.gallery a {
+                width: 48%;
+                margin: 1%;
+                height: 300px; 
+            }
+        }
+
+        @media (max-width: 800px) {
+            body {
+                border: 5px solid #fff; 
+            }
+            
+            figure.logo {
+                height: 150px; 
+            }
+
+            main section.gallery a {
+                height: 250px; 
+                width: 100%;
+                margin: 0 0 15px 0;
+            }
+            
+            main section.content {
+                padding: 15px; 
+            }
+
+            main section.content article {
+                padding: 15px; 
+            }
+
+            main section.content article div.image1 {
+                float: none;
+                width: 100%; 
+                max-width: 100%; 
+                height: auto; 
+                aspect-ratio: 16 / 9;
+                border-radius: 8px;
+                background-size: cover;
+                background-position: center;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            main section.content article div.text {
+                width: 100%;
+                font-size: 0.95rem; 
+                line-height: 1.5rem;
+                margin: 0; 
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+    
+        <header>
+            <figure class="logo"></figure>
+        </header>
+
+    
+        <section class="gallery">
+            <a href="#modal" class="gallery01">
+                <h3>luffy</h3>
+            </a>
+            <a href="#modal" class="gallery02">
+                <h3>zoro</h3>
+            </a>
+            <a href="#modal" class="gallery03">
+                <h3>sanji</h3>
+            </a>
+            <a href="#modal" class="gallery04">
+                <h3>shanks</h3>
+            </a>
+        </section>
+
+      
+        <div id="modal" class="modal-overlay">
+            <a href="#" class="modal-close">&times;</a>
+            <div class="modal-content">
+                <h2>¡Personaje Seleccionado!</h2>
+                <p>Has hecho clic en una de las tarjetas. Aquí puedes poner la información detallada del personaje, imágenes grandes o lo que necesites.</p>
+                <p>Para cerrar esta ventana, haz clic en la X o fuera de este cuadro.</p>
+            </div>
+            <a href="#" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></a>
+        </div>
+
+       
+        <section class="content">
+            <article>
+                <div class="image1"></div>
+                <div class="text">
+                    Monkey D. Luffy es el protagonista de One Piece, un joven de espíritu libre que comió una Fruta del Diablo (la Gomu Gomu) que volvió su cuerpo de goma. Su gran sueño es encontrar el legendario tesoro dejado por Gol D. Roger y convertirse en el Rey de los Piratas, navegando junto a su tripulación de los Sombrero de Paja con un sentido inquebrantable de la lealtad y la justicia.
+                </div>
+            </article>
+
+            <article>
+                <div class="image1"></div>
+                <div class="text">
+                    Roronoa Zoro es el espadachín de los Piratas de Sombrero de Paja y el primer miembro en unirse a Luffy, famoso por luchar con el estilo de tres espadas (Santoryu) llevando una en la boca. Aunque tiene un pésimo sentido de la orientación, posee una resistencia sobrehumana y una lealtad absoluta hacia su capitán, impulsado por la promesa de convertirse en el mejor espadachín del mundo.
+                </div>
+            </article>
+
+            <article>
+                <div class="image1"></div>
+                <div class="text">
+                   Vinsmoke Sanji es el cocinero de los Piratas de Sombrero de Paja, un caballero galante que nunca desperdicia comida ni golpea a una mujer bajo ninguna circunstancia. Pelea exclusivamente usando patadas devastadoras —a menudo envueltas en fuego— para proteger sus manos de chef, mientras persigue su sueño de encontrar el All Blue, un mar legendario donde habitan peces de todo el mundo.
+                </div>
+            </article>
+
+            <article>
+                <div class="image1"></div>
+                <div class="text">
+                    Shanks el Pelirrojo es el capitán de los Piratas del Pelirrojo, uno de los Cuatro Emperadores del Mar (Yonko) y el ídolo que inspiró a Luffy a convertirse en pirata, entregándole su icónico sombrero de paja. A pesar de no tener una Fruta del Diablo y haber perdido su brazo izquierdo salvando a Luffy, es un espadachín formidable con un dominio monstruoso del Haki, conocido por su carácter relajado y amante de las fiestas, pero temido en todo el mundo.
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
